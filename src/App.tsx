@@ -79,7 +79,7 @@ const Hero = () => (
           <img 
             alt="Retrato profesional de Daniel Vidales Bautista" 
             className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110" 
-            src="https://r2.nanobananaimg.com/images/2026-04-16/b04d6461-8664-469b-9877-628629562723.png"
+            src="https://lh3.googleusercontent.com/d/1Q8EcYIIPC23WqhuT4Gh7wzIUodd26s3s"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent"></div>
