@@ -79,7 +79,7 @@ const Hero = () => (
           <img 
             alt="Retrato profesional de Daniel Vidales Bautista" 
             className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110" 
-            src="https://lh3.googleusercontent.com/aida/ADBb0ujIp5DCdx8SXd0mN1XtP2liHyNg-gFISA_EKA-pT626LXXXsdnwZ8Iiyd4MCv4jb0OCDLykzyHb9SIKvhu_R_9LSKuu-XWA5LNCMpnd1nYajVU_LWDq8sECrceQhTr-BeobDtBlIyQeGaA9t4vaHpY7H9-rH3Ks8LvIZx_RvZ07SYeOJUFi73T2McDIO9mZVWTjJqrl-9uNct-eVEiTFBZBWvNU3Gm998nYti84aAgm7tJFL6LlodbXZ-_ifGlE25mWxnS2haKdFw"
+            src="https://r2.nanobananaimg.com/images/2026-04-16/b04d6461-8664-469b-9877-628629562723.png"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent"></div>
@@ -307,7 +307,7 @@ const Projects = () => (
           tags: ["IA", "React", "Tailwind CSS", "Gemini API", "Node.js"],
           img: "https://cdn.leonardo.ai/users/f2fa8b85-4354-4668-9ea0-18e63dd31c89/generations/1f137185-1353-63e0-9018-0bbc7eb06cfd/gemini-2.5-flash-image_Mejora_esta_imagen_y_hazla_m%C3%A1s_profesional_y_llamativa_es_sobre_chatbots-0.jpg",
           overlay: "bg-primary/20",
-          link: "https://ais-dev-xxiblik5htjmhqzxx552in-566681022526.europe-west2.run.app"
+          link: "https://chatbots-psi-seven.vercel.app/"
         },
         {
           title: "Local Commerce Hub (TFG)",
@@ -331,7 +331,7 @@ const Projects = () => (
           tags: ["Scraping", "Node.js", "IA", "Automation"],
           img: "https://gologin.com/wp-content/uploads/image9.png",
           overlay: "bg-tertiary/20",
-          link: "https://ais-pre-3lgb5qazwoimwzr7d5iype-566681022526.europe-west2.run.app"
+          link: "https://scraping-swart.vercel.app/"
         }
       ].map((project, i) => (
         <motion.div 
