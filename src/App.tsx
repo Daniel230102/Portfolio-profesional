@@ -43,7 +43,7 @@ const Navbar = () => (
 );
 
 const Hero = () => (
-  <section className="relative min-h-[80vh] flex items-center px-8 max-w-7xl mx-auto overflow-hidden pt-20">
+  <section className="relative min-h-[80vh] flex items-center px-8 max-w-7xl mx-auto overflow-hidden pt-20" id="home">
     <div className="grid md:grid-cols-12 gap-12 items-center w-full">
       <motion.div 
         initial={{ opacity: 0, x: -50 }}
@@ -105,7 +105,7 @@ const About = () => (
         <p className="text-on-surface-variant leading-relaxed text-lg mb-4">
           Desarrollador de aplicaciones multiplataforma y web con una especialización estratégica en Inteligencia Artificial. Mi formación técnica se ha potenciado con el uso de herramientas de IA generativa y automatización de procesos.
         </p>
-        <p className="text-on-surface-variant leading-relaxed">
+        <p className="text-on-surface-variant leading-relaxed text-lg">
           Comprometido con la innovación, aplico metodologías modernas como el Vibe Coding para acelerar el desarrollo sin sacrificar la calidad. Mi objetivo es fusionar el desarrollo tradicional con el potencial ilimitado de la IA.
         </p>
       </motion.div>
@@ -117,7 +117,7 @@ const About = () => (
         className="bg-surface-container-high rounded-[2rem] p-8 border border-outline-variant/10 flex flex-col justify-center text-center"
       >
         <span className="text-5xl font-headline font-bold text-primary mb-2">4+</span>
-        <span className="text-on-surface-variant font-label text-sm tracking-widest uppercase">Años de experiencia</span>
+        <span className="text-on-surface-variant font-label text-sm tracking-widest uppercase font-bold">Años de experiencia</span>
       </motion.div>
       <motion.div 
         whileInView={{ opacity: 1, y: 0 }}
@@ -127,7 +127,7 @@ const About = () => (
         className="bg-surface-container-high rounded-[2rem] p-8 border border-outline-variant/10 flex flex-col justify-center text-center"
       >
         <span className="text-5xl font-headline font-bold text-tertiary mb-2">15+</span>
-        <span className="text-on-surface-variant font-label text-sm tracking-widest uppercase">Proyectos entregados</span>
+        <span className="text-on-surface-variant font-label text-sm tracking-widest uppercase font-bold">Proyectos entregados</span>
       </motion.div>
       <div className="md:col-span-4 bg-surface-bright/40 backdrop-blur-md rounded-[2rem] p-8 border border-outline-variant/20 flex flex-wrap gap-8 justify-around items-center">
         <div className="flex items-center gap-3">
@@ -267,18 +267,21 @@ const Skills = () => (
       ].map((group, i) => (
         <motion.div 
           key={i}
-          whileHover={{ y: -5 }}
-          className={`bg-surface-container rounded-[2rem] p-8 border border-outline-variant/10 group transition-all duration-500 ${group.color}`}
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          viewport={{ once: true }}
+          transition={{ delay: i * 0.1 }}
+          className={`bg-surface-container rounded-3xl p-8 border border-outline-variant/10 transition-all duration-300 ${group.color}`}
         >
-          <div className={`w-14 h-14 rounded-2xl ${group.iconBg} flex items-center justify-center ${group.iconColor} mb-6 group-hover:scale-110 transition-transform`}>
+          <div className={`w-14 h-14 rounded-2xl ${group.iconBg} flex items-center justify-center ${group.iconColor} mb-6`}>
             {group.icon}
           </div>
           <h3 className="text-xl font-headline font-bold mb-4">{group.title}</h3>
           <ul className="space-y-3">
-            {group.skills.map((skill, j) => (
-              <li key={j} className="flex items-center gap-3">
-                <span className={`w-1.5 h-1.5 rounded-full ${group.iconColor.replace('text-', 'bg-')}`}></span>
-                <span className="text-on-surface-variant text-sm">{skill}</span>
+            {group.skills.map(skill => (
+              <li key={skill} className="flex items-center gap-2 text-on-surface-variant">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/50"></div>
+                {skill}
               </li>
             ))}
           </ul>
@@ -383,31 +386,29 @@ const Projects = () => (
             <div className="relative overflow-hidden rounded-[2rem] aspect-video mb-6 border border-outline-variant/20">
               <img 
                 alt={project.title} 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110" 
                 src={project.img}
                 referrerPolicy="no-referrer"
               />
-              <div className={`absolute inset-0 ${project.overlay} opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center`}>
-                {project.link && (
-                  <div className="bg-white/10 backdrop-blur-md px-6 py-2 rounded-full border border-white/20 text-white font-bold opacity-0 group-hover:opacity-100 transition-all transform translate-y-4 group-hover:translate-y-0">
-                    Ver Proyecto
-                  </div>
-                )}
+              <div className={`absolute inset-0 ${project.overlay} mix-blend-multiply opacity-0 group-hover:opacity-40 transition-opacity`}></div>
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-background/20 backdrop-blur-sm">
+                <div className="p-4 bg-primary text-on-primary rounded-full">
+                  <ExternalLink size={24} />
+                </div>
               </div>
             </div>
-            <div className="flex gap-2 mb-4">
-              {project.tags.map((tag, j) => (
-                <span key={j} className="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-label">{tag}</span>
+          </a>
+          <div className="px-2">
+            <h3 className="text-2xl font-headline font-bold mb-3 group-hover:text-primary transition-colors">{project.title}</h3>
+            <p className="text-on-surface-variant mb-6 leading-relaxed">{project.desc}</p>
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map(tag => (
+                <span key={tag} className="text-xs font-label px-3 py-1 rounded-full bg-surface-container border border-outline-variant/10 text-on-surface-variant">
+                  {tag}
+                </span>
               ))}
             </div>
-            <h3 className="text-2xl font-headline font-bold mb-2 group-hover:text-primary transition-colors flex items-center gap-2">
-              {project.title}
-              {project.link && <ExternalLink size={20} />}
-            </h3>
-            <p className="text-on-surface-variant leading-relaxed">
-              {project.desc}
-            </p>
-          </a>
+          </div>
         </motion.div>
       ))}
     </div>
