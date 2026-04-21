@@ -337,7 +337,7 @@ const Projects = () => (
           title: "Asistente Zalando",
           desc: "Automatización inteligente para la clasificación y registro de incidencias de pedidos (devoluciones, entregas, facturación) transformando datos desordenados en registros estructurados.",
           tags: ["IA", "NLP", "Ecommerce", "Automation"],
-          img: "https://images.unsplash.com/photo-1549463595-b4ff3e44ca97?auto=format&fit=crop&q=80&w=800",
+          img: "https://logodix.com/logo/1718609.png",
           overlay: "bg-primary/20",
           link: "https://proyecto-zalando-two.vercel.app/"
         },
@@ -345,7 +345,7 @@ const Projects = () => (
           title: "Integración HTTP para sistema de tickets",
           desc: "Conector robusto con autenticación avanzada, gestión de errores 429/5xx, reintentos con backoff exponencial y trazabilidad completa mediante trace_id y registros detallados.",
           tags: ["HTTP", "API", "Node.js", "Security"],
-          img: "https://images.unsplash.com/photo-1518433278981-2a2df7aa739a?auto=format&fit=crop&q=80&w=800",
+          img: "https://miro.medium.com/v2/resize:fit:1200/1*2Z-oOnjpSLGa2ZozlckcNg.jpeg",
           overlay: "bg-tertiary/20",
           link: "https://integracion-http.vercel.app/"
         },
@@ -353,7 +353,7 @@ const Projects = () => (
           title: "Transformador",
           desc: "Proyecto propio que utiliza IA para procesar documentos de texto plano y generar instantáneamente presentaciones y PDFs y PowerPoints con un diseño visual moderno, profesional y atractivo.",
           tags: ["Generative AI", "Office Automation", "Productivity", "React"],
-          img: "https://images.unsplash.com/photo-1606857521015-7f9fdf423740?auto=format&fit=crop&q=80&w=800",
+          img: "https://i.ytimg.com/vi/SHypbX2GTUQ/maxresdefault.jpg",
           overlay: "bg-primary/20",
           link: "https://transformador.vercel.app/"
         },
@@ -361,7 +361,7 @@ const Projects = () => (
           title: "Incidencias Glovo",
           desc: "Sistema dual para la gestión de incidencias operativas en tiempo real y consolidación de informes diarios por zona mediante flujos disparados por eventos y tareas cron.",
           tags: ["Real-time", "Logistics", "Automation", "Events"],
-          img: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&q=80&w=800",
+          img: "https://mir-s3-cdn-cf.behance.net/projects/max_808/e26128101925205.Y3JvcCwyNTQyLDE5ODgsNjQxLDEwMA.jpg",
           overlay: "bg-tertiary/20",
           link: "https://glovo-delta.vercel.app/"
         }
