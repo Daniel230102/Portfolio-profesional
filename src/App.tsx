@@ -335,33 +335,33 @@ const Projects = () => (
         },
         {
           title: "Asistente Zalando",
-          desc: "Asistente inteligente diseñado para mejorar la experiencia de compra y navegación en la plataforma de moda Zalando mediante IA.",
-          tags: ["IA", "Ecommerce", "React", "Assistant"],
-          img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800",
+          desc: "Automatización inteligente para la clasificación y registro de incidencias de pedidos (devoluciones, entregas, facturación) transformando datos desordenados en registros estructurados.",
+          tags: ["IA", "NLP", "Ecommerce", "Automation"],
+          img: "https://images.unsplash.com/photo-1549463595-b4ff3e44ca97?auto=format&fit=crop&q=80&w=800",
           overlay: "bg-primary/20",
           link: "https://proyecto-zalando-two.vercel.app/"
         },
         {
           title: "Integración HTTP para sistema de tickets",
-          desc: "Desarrollo de una capa de integración HTTP robusta para la gestión eficiente y automatizada de tickets de soporte y servicios.",
-          tags: ["HTTP", "API", "Integration", "Node.js"],
-          img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800",
+          desc: "Conector robusto con autenticación avanzada, gestión de errores 429/5xx, reintentos con backoff exponencial y trazabilidad completa mediante trace_id y registros detallados.",
+          tags: ["HTTP", "API", "Node.js", "Security"],
+          img: "https://images.unsplash.com/photo-1518433278981-2a2df7aa739a?auto=format&fit=crop&q=80&w=800",
           overlay: "bg-tertiary/20",
           link: "https://integracion-http.vercel.app/"
         },
         {
           title: "Transformador",
-          desc: "Herramienta especializada en el procesamiento y transformación de datos complejos utilizando modelos de lenguaje avanzados.",
-          tags: ["Data Processing", "NLP", "IA", "Tools"],
-          img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
+          desc: "Proyecto propio que utiliza IA para procesar documentos de texto plano y generar instantáneamente presentaciones y PDFs y PowerPoints con un diseño visual moderno, profesional y atractivo.",
+          tags: ["Generative AI", "Office Automation", "Productivity", "React"],
+          img: "https://images.unsplash.com/photo-1606857521015-7f9fdf423740?auto=format&fit=crop&q=80&w=800",
           overlay: "bg-primary/20",
           link: "https://transformador.vercel.app/"
         },
         {
           title: "Incidencias Glovo",
-          desc: "Sistema optimizado para la gestión y resolución de incidencias en tiempo real, mejorando la logística y el servicio de reparto.",
-          tags: ["Logistics", "Real-time", "Management", "App"],
-          img: "https://images.unsplash.com/photo-1526367790999-0150786486a9?auto=format&fit=crop&q=80&w=800",
+          desc: "Sistema dual para la gestión de incidencias operativas en tiempo real y consolidación de informes diarios por zona mediante flujos disparados por eventos y tareas cron.",
+          tags: ["Real-time", "Logistics", "Automation", "Events"],
+          img: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&q=80&w=800",
           overlay: "bg-tertiary/20",
           link: "https://glovo-delta.vercel.app/"
         }
