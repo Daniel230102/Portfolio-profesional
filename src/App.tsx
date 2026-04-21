@@ -332,6 +332,38 @@ const Projects = () => (
           img: "https://gologin.com/wp-content/uploads/image9.png",
           overlay: "bg-tertiary/20",
           link: "https://scraping-swart.vercel.app/"
+        },
+        {
+          title: "Asistente Zalando",
+          desc: "Asistente inteligente diseñado para mejorar la experiencia de compra y navegación en la plataforma de moda Zalando mediante IA.",
+          tags: ["IA", "Ecommerce", "React", "Assistant"],
+          img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800",
+          overlay: "bg-primary/20",
+          link: "https://proyecto-zalando-two.vercel.app/"
+        },
+        {
+          title: "Integración HTTP para sistema de tickets",
+          desc: "Desarrollo de una capa de integración HTTP robusta para la gestión eficiente y automatizada de tickets de soporte y servicios.",
+          tags: ["HTTP", "API", "Integration", "Node.js"],
+          img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800",
+          overlay: "bg-tertiary/20",
+          link: "https://integracion-http.vercel.app/"
+        },
+        {
+          title: "Transformador",
+          desc: "Herramienta especializada en el procesamiento y transformación de datos complejos utilizando modelos de lenguaje avanzados.",
+          tags: ["Data Processing", "NLP", "IA", "Tools"],
+          img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
+          overlay: "bg-primary/20",
+          link: "https://transformador.vercel.app/"
+        },
+        {
+          title: "Incidencias Glovo",
+          desc: "Sistema optimizado para la gestión y resolución de incidencias en tiempo real, mejorando la logística y el servicio de reparto.",
+          tags: ["Logistics", "Real-time", "Management", "App"],
+          img: "https://images.unsplash.com/photo-1526367790999-0150786486a9?auto=format&fit=crop&q=80&w=800",
+          overlay: "bg-tertiary/20",
+          link: "https://glovo-delta.vercel.app/"
         }
       ].map((project, i) => (
         <motion.div 
