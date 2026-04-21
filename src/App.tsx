@@ -21,6 +21,7 @@ import {
   MoveRight,
   ExternalLink
 } from "lucide-react";
+import { ChatBot } from "./components/ChatBot";
 
 const Navbar = () => (
   <header className="fixed top-0 w-full z-50 bg-slate-950/60 backdrop-blur-xl border-b border-outline-variant/10">
@@ -507,6 +508,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <ChatBot />
     </div>
   );
 }
