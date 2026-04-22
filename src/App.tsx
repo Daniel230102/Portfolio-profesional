@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { useState, FormEvent } from "react";
 import { motion } from "motion/react";
 import { 
   ArrowRight, 
@@ -415,74 +416,106 @@ const Projects = () => (
   </section>
 );
 
-const Contact = () => (
-  <section className="py-24 px-8 max-w-7xl mx-auto" id="contact">
-    <div className="bg-surface-container rounded-[3rem] overflow-hidden border border-outline-variant/10">
-      <div className="grid md:grid-cols-2">
-        <div className="p-12 md:p-20 bg-primary/5">
-          <h2 className="text-4xl font-headline font-bold mb-8 leading-tight">Construyamos algo <span className="text-primary">extraordinario</span> juntos.</h2>
-          <div className="space-y-8">
-            <div className="flex items-center gap-6">
-              <div className="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary">
-                <Mail size={24} />
+const Contact = () => {
+  const [formData, setFormData] = useState({ name: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "success">("idle");
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.message) return;
+    
+    const subject = encodeURIComponent(`Nuevo mensaje de ${formData.name}`);
+    const body = encodeURIComponent(
+      `Nombre del remitente: ${formData.name}\n\n` +
+      `Mensaje:\n${formData.message}`
+    );
+    
+    // Construct the Gmail direct compose link
+    // The 'to' is set to your email, so the sender will be the visitor
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=danielvidalesbautista@gmail.com&su=${subject}&body=${body}`;
+    
+    // Open Gmail compose in a new tab
+    window.open(gmailUrl, '_blank');
+    
+    // Reset form and show success state
+    setStatus("success");
+    setFormData({ name: "", message: "" });
+    setTimeout(() => setStatus("idle"), 5000);
+  };
+
+  return (
+    <section className="py-24 px-8 max-w-7xl mx-auto" id="contact">
+      <div className="bg-surface-container rounded-[3rem] overflow-hidden border border-outline-variant/10">
+        <div className="grid md:grid-cols-2">
+          <div className="p-12 md:p-20 bg-primary/5">
+            <h2 className="text-4xl font-headline font-bold mb-8 leading-tight">Construyamos algo <span className="text-primary">extraordinario</span> juntos.</h2>
+            <div className="space-y-8">
+              <div className="flex items-center gap-6">
+                <div className="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary">
+                  <Mail size={24} />
+                </div>
+                <div>
+                  <p className="text-xs font-label text-on-surface-variant uppercase tracking-widest mb-1">Envíame un email</p>
+                  <p className="font-headline font-bold">danielvidalesbautista@gmail.com</p>
+                </div>
               </div>
-              <div>
-                <p className="text-xs font-label text-on-surface-variant uppercase tracking-widest mb-1">Envíame un email</p>
-                <p className="font-headline font-bold">danielvidalesbautista@gmail.com</p>
+              <div className="flex items-center gap-6">
+                <div className="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary">
+                  <MapPin size={24} />
+                </div>
+                <div>
+                  <p className="text-xs font-label text-on-surface-variant uppercase tracking-widest mb-1">Ubicación</p>
+                  <p className="font-headline font-bold">Toledo, España</p>
+                </div>
               </div>
-            </div>
-            <div className="flex items-center gap-6">
-              <div className="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary">
-                <MapPin size={24} />
-              </div>
-              <div>
-                <p className="text-xs font-label text-on-surface-variant uppercase tracking-widest mb-1">Ubicación</p>
-                <p className="font-headline font-bold">Toledo, España</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-6">
-              <div className="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary">
-                <Phone size={24} />
-              </div>
-              <div>
-                <p className="text-xs font-label text-on-surface-variant uppercase tracking-widest mb-1">Teléfono</p>
-                <p className="font-headline font-bold">(+34) 656367060</p>
+              <div className="flex items-center gap-6">
+                <div className="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary">
+                  <Phone size={24} />
+                </div>
+                <div>
+                  <p className="text-xs font-label text-on-surface-variant uppercase tracking-widest mb-1">Teléfono</p>
+                  <p className="font-headline font-bold">(+34) 656367060</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="p-12 md:p-20">
-          <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
-            <div className="relative">
-              <input 
-                className="w-full bg-transparent border-0 border-b border-outline py-4 px-0 focus:ring-0 focus:border-primary text-on-surface placeholder:text-outline transition-all duration-300" 
-                placeholder="Nombre completo" 
-                type="text"
-              />
-            </div>
-            <div className="relative">
-              <input 
-                className="w-full bg-transparent border-0 border-b border-outline py-4 px-0 focus:ring-0 focus:border-primary text-on-surface placeholder:text-outline transition-all duration-300" 
-                placeholder="Correo electrónico" 
-                type="email"
-              />
-            </div>
-            <div className="relative">
-              <textarea 
-                className="w-full bg-transparent border-0 border-b border-outline py-4 px-0 focus:ring-0 focus:border-primary text-on-surface placeholder:text-outline transition-all duration-300" 
-                placeholder="Tu mensaje" 
-                rows={4}
-              ></textarea>
-            </div>
-            <button className="w-full py-5 bg-primary text-on-primary rounded-2xl font-bold text-lg hover:bg-primary-dim transition-all active:scale-[0.98]">
-              Enviar mensaje
-            </button>
-          </form>
+          <div className="p-12 md:p-20">
+            <form className="space-y-8" onSubmit={handleSubmit}>
+              <div className="relative">
+                <input 
+                  className="w-full bg-transparent border-0 border-b border-outline py-4 px-0 focus:ring-0 focus:border-primary text-on-surface placeholder:text-outline transition-all duration-300" 
+                  placeholder="Tu nombre" 
+                  type="text"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                />
+              </div>
+              <div className="relative">
+                <textarea 
+                  className="w-full bg-transparent border-0 border-b border-outline py-4 px-0 focus:ring-0 focus:border-primary text-on-surface placeholder:text-outline transition-all duration-300" 
+                  placeholder="Cuéntame en qué puedo ayudarte..." 
+                  rows={6}
+                  required
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                ></textarea>
+              </div>
+              <button 
+                className={`w-full py-5 rounded-2xl font-bold text-lg transition-all active:scale-[0.98] flex items-center justify-center gap-2 ${
+                  status === "success" ? "bg-emerald-500 text-white" : "bg-primary text-on-primary hover:bg-primary-dim"
+                }`}
+              >
+                {status === "success" ? "¡Abriendo Gmail!" : "Enviar mensaje"}
+                {status === "success" && <Zap size={20} className="animate-pulse" />}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 const Footer = () => (
   <footer className="w-full border-t border-outline-variant/10 bg-slate-950">
