@@ -328,7 +328,7 @@ const Projects = () => (
           tags: ["Vibe Coding", "Innovation", "Fast-Dev"],
           img: "https://miro.medium.com/v2/resize:fit:1358/format:webp/1*uCTdAhlsclSR2kg9-9D0uw.png",
           overlay: "bg-primary/20",
-          link: "https://vibe-coding-la-revolucion-del-comer.vercel.app/"
+          link: "https://vibe-coding-la-revolucion-del-comerio-online.vercel.app/"
         },
         {
           title: "Web crawler",
