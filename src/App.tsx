@@ -315,12 +315,12 @@ const Projects = () => (
           link: "https://chatbots-psi-seven.vercel.app/"
         },
         {
-          title: "Local Commerce Hub (TFG)",
-          desc: "Plataforma web diseñada para unificar y digitalizar el comercio local en localidades de pequeño y mediano tamaño, impulsando la economía de proximidad.",
-          tags: ["Web", "React", "Node.js", "JavaScript", "Bootstrap", "MongoDB"],
-          img: "https://r2.nanobananaimg.com/images/2026-04-13/f29d2e1f-0043-43c2-9680-96a4eb176d64.png",
+          title: "MarketMind - Revolución del Marketing",
+          desc: "Plataforma avanzada de marketing impulsada por IA que optimiza estrategias digitales mediante análisis predictivo, segmentación inteligente y automatización de campañas en tiempo real.",
+          tags: ["AI Marketing", "React", "Data Analytics", "Automation"],
+          img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
           overlay: "bg-tertiary/20",
-          link: "http://localhost:3000/"
+          link: "https://la-revolucion-del-marketing.vercel.app/"
         },
         {
           title: "Ecosistema de Apps Vibe Coding",
